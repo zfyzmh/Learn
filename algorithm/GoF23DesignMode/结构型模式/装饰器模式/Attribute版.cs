@@ -15,6 +15,7 @@ namespace algorithm.GoF23DesignMode.结构型模式.装饰器模式
 
             // Decorating the rectangle with a red border
             MyClass myClass = new MyClass("adaasd");
+
             Console.WriteLine(rectangle.Draw()); ;
         }
 
