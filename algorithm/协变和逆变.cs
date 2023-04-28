@@ -18,8 +18,6 @@ namespace algorithm
             子类 zi = new 子类();
 
             父类 fu = new 父类();
-
-            Console.WriteLine(zi as fu);
         }
 
         [Test]

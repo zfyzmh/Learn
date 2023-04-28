@@ -5,6 +5,9 @@ namespace algorithm.GoF23DesignMode._2.适配器模式
 {
     public class Program
     {
+        /// <summary>
+        ///
+        /// </summary>
         [Test]
         public void Main()
         {
@@ -45,7 +48,9 @@ namespace algorithm.GoF23DesignMode._2.适配器模式
 
     public class CircleAdapter : IShape
     {
-        private Circle Circle; public CircleAdapter(Circle circle)
+        private Circle Circle;
+
+        public CircleAdapter(Circle circle)
         {
             Circle = circle;
         }

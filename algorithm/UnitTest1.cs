@@ -17,8 +17,7 @@ namespace algorithm
         {
             string str = "µ¥¾Ý×´Ì¬,dataItem,QuotedPriceManageListState";
 
-            str.Split(',').ToList().ForEach(m=>Console.WriteLine(m));
-            
+            str.Split(',').ToList().ForEach(m => Console.WriteLine(m));
 
             Assert.Pass();
         }
