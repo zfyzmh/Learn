@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sql100.sql100题.EfEntity;
 
+/// <summary>
+/// 教室表
+/// </summary>
 public partial class Teacher
 {
     [Key]

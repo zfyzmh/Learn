@@ -2,10 +2,17 @@
 
 namespace Sql100.sql100题.EfEntity;
 
+/// <summary>
+/// 课程表
+/// </summary>
 public partial class Course
 {
     [Key]
     public int Id { get; set; }
+
+    /// <summary>
+    /// 课程名称
+    /// </summary>
 
     public string? Cname { get; set; }
 

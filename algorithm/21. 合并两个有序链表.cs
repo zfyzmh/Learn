@@ -110,12 +110,19 @@ namespace algorithm
             }
         }
 
+        //This code prints out the values of a ListNode.
         private void forlistnode(ListNode list1)
         {
+            //Print out the value of the first node
             System.Console.WriteLine(list1.val);
+
+            //Loop through the list until the next node is null
             while (list1.next != null)
             {
+                //Set the current node to the next node
                 list1 = list1.next;
+
+                //Print out the value of the current node
                 System.Console.WriteLine(list1.val);
             }
         }
