@@ -9,7 +9,6 @@ namespace algorithm
         [Test]
         public void Test1()
         {
-
             var model = new Person();
             model.state = 1;
             var json = JsonConvert.SerializeObject(model);//由于ID值为1，得到json为{"ID":ture}
