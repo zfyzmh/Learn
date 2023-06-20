@@ -5,7 +5,11 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "algorithm", "algorithm\algorithm.csproj", "{44F2B37E-9D4E-48BB-91D9-0ED7F09A98AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sql100", "Sql100\Sql100.csproj", "{9E101E4A-B9DC-4EF1-9319-D03AAF358740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sql100", "Sql100\Sql100.csproj", "{9E101E4A-B9DC-4EF1-9319-D03AAF358740}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp", "CSharp\CSharp.csproj", "{B72E76F2-84D0-47AE-A2B8-E3A3BF837B00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF23DesignMode", "GoF23DesignMode\GoF23DesignMode.csproj", "{7A914C04-AACB-4AE2-93C4-2FA8AAE907AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{9E101E4A-B9DC-4EF1-9319-D03AAF358740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E101E4A-B9DC-4EF1-9319-D03AAF358740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E101E4A-B9DC-4EF1-9319-D03AAF358740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72E76F2-84D0-47AE-A2B8-E3A3BF837B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72E76F2-84D0-47AE-A2B8-E3A3BF837B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72E76F2-84D0-47AE-A2B8-E3A3BF837B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72E76F2-84D0-47AE-A2B8-E3A3BF837B00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A914C04-AACB-4AE2-93C4-2FA8AAE907AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A914C04-AACB-4AE2-93C4-2FA8AAE907AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A914C04-AACB-4AE2-93C4-2FA8AAE907AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A914C04-AACB-4AE2-93C4-2FA8AAE907AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
