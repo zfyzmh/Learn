@@ -210,21 +210,18 @@ namespace Sql100.sql100题
         public void Test15()
         {
             var sql = @"SELECT
-	                sc.CId,
-	                co.Cname,
-	                AVG( sc.score ) AS avg_score,
-	                MIN( sc.score ) AS min_score,
-	                MAX( sc.score ) AS max_score,
-	                SUM( CASE WHEN sc.score >= 60 THEN 1 ELSE 0 END )/ COUNT(*) AS PassedRate,
-	                SUM( CASE WHEN sc.score >= 70 AND sc.score < 80 THEN 1 ELSE 0 END ) / COUNT(*) AS MediumRate,
-	                SUM( CASE WHEN sc.score >= 80 AND sc.score < 90 THEN 1 ELSE 0 END )/ COUNT(*) AS GoodRate,
-	                SUM( CASE WHEN sc.score >= 90 THEN 1 ELSE 0 END ) / COUNT(*) AS ExcellentRate
-                FROM
-	                SC sc
-	                LEFT JOIN Course co ON sc.CId = co.CId
-                GROUP BY
-	                sc.CId,
-	                co.Cname";
+	                    c.CId AS CourseId,
+	                    c.Cname AS CourseName,
+	                    COUNT( sc.SId ) AS StudentCount
+                    FROM
+	                    Course c
+	                    LEFT JOIN SC sc ON c.CId = sc.CId
+                    GROUP BY
+	                    c.CId,
+	                    c.Cname
+                    ORDER BY
+	                    COUNT( sc.SId ) DESC,
+	                    c.CId ASC;";
             var result = _db.Ado.SqlQuery<dynamic>(sql);
 
             var result1 = _db.Queryable<Sc>()
@@ -250,6 +247,62 @@ namespace Sql100.sql100题
                             .OrderByDescending(m => m.count)
                             .ThenBy(m => m.cid)
                             .ToList();
+        }
+
+        /// <summary>
+        /// 按各科成绩进行排序，并显示排名， Score 重复时保留名次空缺
+        /// </summary>
+        [Test]
+        public void Test16Async()
+        {
+            var sql = @"SELECT
+	                    cou.Cname,
+	                    a.SId,
+	                    a.CId,
+	                    a.score,
+	                    (
+	                    SELECT
+		                    COUNT( DISTINCT b.score ) + 1
+	                    FROM
+		                    SC b
+	                    WHERE
+		                    b.CId = a.CId
+		                    AND b.score > a.score
+	                    ) AS r
+                    FROM
+	                    SC a
+	                    LEFT JOIN Course cou ON cou.CId = a.CId
+                    ORDER BY
+	                    a.CId ASC,
+	                    a.score DESC;
+                    ";
+            var result = _db.Ado.SqlQuery<dynamic>(sql);
+
+            var result1 = _db.Queryable<Sc>()
+                    .LeftJoin<Course>((sc, co) => sc.CId == co.CId)
+                    .GroupBy((sc, co) => new { sc.CId, co.Cname })
+                    .OrderBy((sc, co) => SqlFunc.AggregateCount("*"), OrderByType.Desc)
+                    .OrderBy((sc, co) => co.CId, OrderByType.Asc)
+                    .Select((sc, co) => new
+                    {
+                        sc.CId,
+                        co.Cname,
+                    })
+                    .ToList();
+
+            var result2 = _context.Scs
+                .OrderBy(m => m.CourseId)
+                .ThenByDescending(m => m.Score)
+                .AsEnumerable()
+                .Select((m, index) => new
+                {
+                    m.CourseId,
+                    m.Score,
+                    m.Course.Cname,
+                    m.Student.Name,
+                    Rank = index + 1
+                })
+                .ToList();
         }
     }
 }
