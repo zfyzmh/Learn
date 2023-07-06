@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace algorithm
+namespace algorithm.数据结构
 {
     public class SingleLinkedListNode<T>
     {
@@ -9,7 +9,7 @@ namespace algorithm
 
         public SingleLinkedListNode()
         {
-            Value = default(T); Next = null;
+            Value = default; Next = null;
         }
     }
 
@@ -80,7 +80,7 @@ namespace algorithm
             {
                 if (index >= Count || index < 0)
                 {
-                    return default(T);
+                    return default;
                 }
                 SingleLinkedListNode<T> tempNode = first;
                 for (int i = 0; i < index; i++)
@@ -470,7 +470,7 @@ namespace algorithm
         {
             if (index >= Count)
             {
-                return default(T);
+                return default;
             }
             else
             {

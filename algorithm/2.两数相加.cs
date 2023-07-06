@@ -77,6 +77,7 @@ namespace algorithm
             } while (l1 != null || l2 != null || Other != 0);
             return result.next;
         }
+
         /// <summary>
         /// 返回链表中逆序存储的两数之和
         /// </summary>
@@ -92,7 +93,7 @@ namespace algorithm
             while (l1 != null || l2 != null || temp / 10 != 0)
             {
                 temp = (l1?.val ?? 0) + (l2?.val ?? 0) + temp / 10;
-                lnTemp.next = lnTemp.next ?? new ListNode(-1);
+                lnTemp.next ??= new ListNode(-1);
                 lnTemp.next.val = temp % 10;
                 lnTemp = lnTemp.next;
                 l1 = l1?.next; l2 = l2?.next;

@@ -2,7 +2,7 @@
 using System;
 using System.Text;
 
-namespace algorithm
+namespace algorithm.数据结构
 {
     internal class 链表LinkedList
     {
@@ -31,7 +31,6 @@ namespace algorithm
             Console.WriteLine(l);
             l.RemoveAt(2);//删除index=2的结点
             Console.WriteLine(l);
-
         }
     }
 
@@ -51,7 +50,7 @@ namespace algorithm
             public Node(E e)//若不知道下一个节点是什么
             {
                 this.e = e;
-                this.next = null;
+                next = null;
             }
 
             public override string ToString()//打印输出
