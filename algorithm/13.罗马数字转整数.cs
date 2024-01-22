@@ -29,8 +29,9 @@ namespace algorithm
         public void Test1()
         {
             string a = "MCMXCIV";
-            Console.WriteLine(RomanToInt(a)); 
+            Console.WriteLine(RomanToInt(a));
         }
+
         /// <summary>
         /// 简单粗暴替换字符串法
         /// </summary>
@@ -53,39 +54,51 @@ namespace algorithm
                     case 'M':
                         sum += 1000;
                         break;
+
                     case 'W':
                         sum += 900;
                         break;
+
                     case 'D':
                         sum += 500;
                         break;
+
                     case 'O':
                         sum += 400;
                         break;
+
                     case 'C':
                         sum += 100;
                         break;
+
                     case 'R':
                         sum += 90;
                         break;
+
                     case 'L':
                         sum += 50;
                         break;
+
                     case 'U':
                         sum += 40;
                         break;
+
                     case 'X':
                         sum += 10;
                         break;
+
                     case 'T':
                         sum += 9;
                         break;
+
                     case 'V':
                         sum += 5;
                         break;
+
                     case 'Y':
                         sum += 4;
                         break;
+
                     case 'I':
                         sum += 1;
                         break;
@@ -93,6 +106,7 @@ namespace algorithm
             }
             return sum;
         }
+
         public int RomanToInt2(string s)
         {
             int result = 0;
@@ -105,25 +119,31 @@ namespace algorithm
                         if (i != s.Length - 1)
                             if (s[i + 1] == 'V' || s[i + 1] == 'X') result -= 2;
                         break;
+
                     case 'V':
                         result += 5;
                         break;
+
                     case 'X':
                         result += 10;
                         if (i != s.Length - 1)
                             if (s[i + 1] == 'L' || s[i + 1] == 'C') result -= 20;
                         break;
+
                     case 'L':
                         result += 50;
                         break;
+
                     case 'C':
                         result += 100;
                         if (i != s.Length - 1)
                             if (s[i + 1] == 'D' || s[i + 1] == 'M') result -= 200;
                         break;
+
                     case 'D':
                         result += 500;
                         break;
+
                     case 'M':
                         result += 1000;
                         break;

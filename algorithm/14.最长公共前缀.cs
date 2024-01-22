@@ -26,26 +26,26 @@ namespace algorithm
     0 <= strs[i].length <= 200
     strs[i] 仅由小写英文字母组成
     */
-    
-    class _14
+
+    internal class _14
     {
         [Test]
         public void Test1()
         {
-          string[]  strs =new string[] { "flower", "flow" };
-            Console.WriteLine(LongestCommonPrefix(strs));  
+            string[] strs = new string[] { "flower", "flow" };
+            Console.WriteLine(LongestCommonPrefix(strs));
         }
+
         public string LongestCommonPrefix(string[] strs)
         {
             string m = "";//要返回的总前缀
             for (int i = 0; i < strs.Length; i++)
             {
-                for (int j = 0; j <strs[i].Length; j++)
+                for (int j = 0; j < strs[i].Length; j++)
                 {
-                    Console.WriteLine(i+"------"+j);
+                    Console.WriteLine(i + "------" + j);
                     Console.WriteLine(strs[i][j]);
                 }
-
             }
             return m;
         }

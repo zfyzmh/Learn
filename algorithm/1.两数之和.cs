@@ -16,22 +16,23 @@ namespace algorithm
         提示： 2 <= nums.length <= 104 -109 <= nums[i] <= 109 -109 <= target <= 109 只会存在一个有效答案
         进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？
          */
+
         [Test]
         public void Test1()
         {
-           var a= TwoSum(new int[] { 2,5,5,11 }, 10);
-            System.Console.WriteLine(a[0]+"------"+a[1]);
+            var a = TwoSum(new int[] { 2, 5, 5, 11 }, 10);
+            System.Console.WriteLine(a[0] + "------" + a[1]);
         }
-       
+
         public int[] TwoSum(int[] nums, int target)
         {
             for (int i = 0; i < nums.Length; i++)
             {
-                for (int j = i+1; j < nums.Length; j++)
+                for (int j = i + 1; j < nums.Length; j++)
                 {
-                    if ((nums[i]+nums[j])==target)
+                    if ((nums[i] + nums[j]) == target)
                     {
-                         return new int[] { i, j };
+                        return new int[] { i, j };
                     }
                 }
             }
