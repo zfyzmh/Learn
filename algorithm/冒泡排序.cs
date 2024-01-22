@@ -15,6 +15,11 @@ namespace algorithm
             {
                 Console.WriteLine(item);
             }
+
+            foreach (var item in BubblingSortTwo(vs))
+            {
+                Console.WriteLine(item);
+            }
         }
 
         public int[] BubblingSort(int[] vs)
@@ -24,6 +29,24 @@ namespace algorithm
                 for (int j = 0; j < vs.Length - 1 - i; j++)
                 {
                     if (vs[j] > vs[j + 1])
+                    {
+                        var a = vs[j + 1];
+                        vs[j + 1] = vs[j];
+                        vs[j] = a;
+                    }
+                }
+            }
+
+            return vs;
+        }
+
+        public int[] BubblingSortTwo(int[] vs)
+        {
+            for (int i = 0; i < vs.Length - 1; i++)
+            {
+                for (int j = 0; j < vs.Length - 1 - i; j++)
+                {
+                    if (vs[j] < vs[j + 1])
                     {
                         var a = vs[j + 1];
                         vs[j + 1] = vs[j];
