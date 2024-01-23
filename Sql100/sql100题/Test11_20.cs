@@ -248,10 +248,10 @@ namespace Sql100
         }
 
         /// <summary>
-        /// 按各科成绩进行排序，并显示排名， Score 重复时保留名次空缺
+        /// 按各科成绩进行排序，并显示排名,如需不保留排名只需要将DISTINCT语句去除即可
         /// </summary>
         [Test]
-        public void Test16Async()
+        public void Test16()
         {
             var sql = @"SELECT
 	                    cou.Cname,
@@ -277,29 +277,34 @@ namespace Sql100
             var result = _db.Ado.SqlQuery<dynamic>(sql);
 
             var result1 = _db.Queryable<Sc>()
-                    .LeftJoin<Course>((sc, co) => sc.CId == co.CId)
-                    .GroupBy((sc, co) => new { sc.CId, co.Cname })
-                    .OrderBy((sc, co) => SqlFunc.AggregateCount("*"), OrderByType.Desc)
-                    .OrderBy((sc, co) => co.CId, OrderByType.Asc)
-                    .Select((sc, co) => new
+                    .LeftJoin<Course>((sc, cou) => sc.CId == cou.CId)
+                    .Select((sc, cou) => new
                     {
+                        cou.Cname,
+                        sc.SId,
                         sc.CId,
-                        co.Cname,
+                        sc.Score,
+                        Rank = SqlFunc.Subqueryable<Sc>().Where(b => b.CId == sc.CId && b.Score > sc.Score).Select(b => SqlFunc.AggregateCount(b.Score)) + 1
                     })
+                    .OrderBy(sc => sc.CId, OrderByType.Asc)
+                    .OrderBy(sc => sc.Score, OrderByType.Desc)
                     .ToList();
 
             var result2 = _context.Scs
+                .Select(sc => new
+                {
+                    sc.Course.Cname,
+                    sc.CourseId,
+                    sc.Student.Name,
+                    sc.StudentId,
+                    sc.Score,
+                    Rank = _context.Scs.Where(b => b.CourseId == sc.CourseId && b.Score > sc.Score)
+                     .Select(b => b.Score)
+                     .Distinct()
+                     .Count() + 1
+                })
                 .OrderBy(m => m.CourseId)
                 .ThenByDescending(m => m.Score)
-                .AsEnumerable()
-                .Select((m, index) => new
-                {
-                    m.CourseId,
-                    m.Score,
-                    m.Course.Cname,
-                    m.Student.Name,
-                    Rank = index + 1
-                })
                 .ToList();
         }
     }
