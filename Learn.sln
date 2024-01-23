@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "algorithm", "algorithm\algorithm.csproj", "{44F2B37E-9D4E-48BB-91D9-0ED7F09A98AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sql50", "Sql100\Sql50.csproj", "{9E101E4A-B9DC-4EF1-9319-D03AAF358740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sql50", "Sql50\Sql50.csproj", "{9E101E4A-B9DC-4EF1-9319-D03AAF358740}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp", "CSharp\CSharp.csproj", "{B72E76F2-84D0-47AE-A2B8-E3A3BF837B00}"
 EndProject
