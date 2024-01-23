@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Debug;
 using Microsoft.Extensions.Logging;
-using Sql100.sql100题.EfEntity;
+using Sql50.Sql50题.EfEntity;
 
-namespace Sql100;
+namespace Sql50;
 
 /// <summary>
 /// 题目来源https://www.cnblogs.com/lyn8100/p/16135926.html

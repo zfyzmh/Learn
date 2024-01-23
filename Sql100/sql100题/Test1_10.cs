@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using NUnit.Framework;
-using Sql100;
+using Sql50;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
@@ -10,13 +10,13 @@ using System.Security.Cryptography;
 using System.Text;
 using WebFirst.Entities;
 using System.Linq.Expressions;
-using Sql100.sql100题.EfEntity;
+using Sql50.Sql50题.EfEntity;
 using Student = WebFirst.Entities.Student;
 using Sc = WebFirst.Entities.Sc;
 using Course = WebFirst.Entities.Course;
 using Teacher = WebFirst.Entities.Teacher;
 
-namespace Sql100
+namespace Sql50
 {
     public class Test1_20
     {

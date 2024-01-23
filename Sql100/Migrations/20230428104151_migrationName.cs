@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Sql100.Migrations
+namespace Sql50.Migrations
 {
     /// <inheritdoc />
     public partial class migrationName : Migration

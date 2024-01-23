@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sql100
+namespace Sql50
 {
     public class Database
     {

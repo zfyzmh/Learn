@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Sql100.Migrations
+namespace Sql50.Migrations
 {
     /// <inheritdoc />
     public partial class migrationName2 : Migration

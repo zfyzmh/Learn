@@ -5,7 +5,7 @@ using Teacher = WebFirst.Entities.Teacher;
 using SqlSugar;
 using Microsoft.EntityFrameworkCore;
 
-namespace Sql100
+namespace Sql50
 {
     public class Test11_20
     {

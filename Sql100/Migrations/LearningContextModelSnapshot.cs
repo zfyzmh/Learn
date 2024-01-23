@@ -3,11 +3,11 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Sql100;
+using Sql50;
 
 #nullable disable
 
-namespace Sql100.Migrations
+namespace Sql50.Migrations
 {
     [DbContext(typeof(LearningContext))]
     partial class LearningContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace Sql100.Migrations
                 .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Sql100.sql100题.EfEntity.Course", b =>
+            modelBuilder.Entity("Sql50.Sql50题.EfEntity.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,7 @@ namespace Sql100.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("Sql100.sql100题.EfEntity.Sc", b =>
+            modelBuilder.Entity("Sql50.Sql50题.EfEntity.Sc", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -62,7 +62,7 @@ namespace Sql100.Migrations
                     b.ToTable("Scs");
                 });
 
-            modelBuilder.Entity("Sql100.sql100题.EfEntity.Student", b =>
+            modelBuilder.Entity("Sql50.Sql50题.EfEntity.Student", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -82,7 +82,7 @@ namespace Sql100.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("Sql100.sql100题.EfEntity.Teacher", b =>
+            modelBuilder.Entity("Sql50.Sql50题.EfEntity.Teacher", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,9 +96,9 @@ namespace Sql100.Migrations
                     b.ToTable("Teachers");
                 });
 
-            modelBuilder.Entity("Sql100.sql100题.EfEntity.Course", b =>
+            modelBuilder.Entity("Sql50.Sql50题.EfEntity.Course", b =>
                 {
-                    b.HasOne("Sql100.sql100题.EfEntity.Teacher", "Teacher")
+                    b.HasOne("Sql50.Sql50题.EfEntity.Teacher", "Teacher")
                         .WithMany()
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -107,15 +107,15 @@ namespace Sql100.Migrations
                     b.Navigation("Teacher");
                 });
 
-            modelBuilder.Entity("Sql100.sql100题.EfEntity.Sc", b =>
+            modelBuilder.Entity("Sql50.Sql50题.EfEntity.Sc", b =>
                 {
-                    b.HasOne("Sql100.sql100题.EfEntity.Course", "Course")
+                    b.HasOne("Sql50.Sql50题.EfEntity.Course", "Course")
                         .WithMany()
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Sql100.sql100题.EfEntity.Student", "Student")
+                    b.HasOne("Sql50.Sql50题.EfEntity.Student", "Student")
                         .WithMany("Scs")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -126,7 +126,7 @@ namespace Sql100.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("Sql100.sql100题.EfEntity.Student", b =>
+            modelBuilder.Entity("Sql50.Sql50题.EfEntity.Student", b =>
                 {
                     b.Navigation("Scs");
                 });
