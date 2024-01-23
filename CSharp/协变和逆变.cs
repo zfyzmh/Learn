@@ -7,43 +7,22 @@ namespace algorithm
 {
     public class 协变和逆变
     {
+        /// <summary>
+        /// 协变-in-入参,逆变-out-出参.遵循里氏替换原则,即可用父类替换子类.在使用协变或者逆变的类型的时候,是只能使用父类的功能的
+        /// public delegate TResult Func<in T, out TResult>(T arg);
+        /// </summary>
         [Test]
-        public void 协变()
+        public void 协变逆变()
         {
-            ICollection<int> list = new List<int>();
-            IFoo<string> foo = new Foo();
+            Func<string, object> list = new Func<object, string>((m) =>
+            {
+                Console.WriteLine(m);
+                Console.WriteLine(m.GetType());
 
-            Console.WriteLine(foo.GetName());
+                return "I got it";
+            });
 
-            子类 zi = new 子类();
-
-            父类 fu = new 父类();
+            object a = list.Invoke("I got it");
         }
-
-        [Test]
-        public void 逆变()
-        {
-        }
-    }
-
-    public class Foo : IFoo<string>
-    {
-        public string GetName()
-        {
-            return GetType().Name;
-        }
-    }
-
-    internal interface IFoo<T>
-    {
-        T GetName();
-    }
-
-    public class 父类
-    {
-    }
-
-    public class 子类 : 父类
-    {
     }
 }
