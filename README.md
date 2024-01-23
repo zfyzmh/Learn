@@ -3,7 +3,7 @@
 ### 1. algorithm--算法模块 包含我在力扣刷的题目和一些经典算法
 ### 2. Cssharp--c#语法模块 包含一些c#高级语法的学习
 ### 3. GoF23DesignMode --设计模式模块 23中常用设计模式的c#实现
-### 4. Sql100 sql测验题目,里面每一题都包含sql原生写法,efcore linq 写法和sqlsugar写法(提供云端只读的数据库) [题目来源]([https://www.cnblogs.com/lyn8100/p/16135926.html](https://zhuanlan.zhihu.com/p/67645448))
+### 4. Sql100 sql测验题目,里面每一题都包含sql原生写法,efcore linq 写法和sqlsugar写法(提供云端只读的数据库) [题目来源](https://zhuanlan.zhihu.com/p/67645448)
 
 
 --- 
