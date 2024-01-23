@@ -7,6 +7,9 @@ using Sql100.sql100题.EfEntity;
 
 namespace Sql100;
 
+/// <summary>
+/// 题目来源https://www.cnblogs.com/lyn8100/p/16135926.html
+/// </summary>
 public partial class LearningContext : DbContext
 {
     [Obsolete]
@@ -31,8 +34,9 @@ public partial class LearningContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseMySql("server=127.0.0.1;port=3307;database=learning2;uid=root;pwd=210610zho.", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-mysql"));
+        optionsBuilder.UseMySql("server=zifeiyu.fun;port=19960;database=test;uid=readonly;pwd=123456", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-mysql"));
         optionsBuilder.UseLoggerFactory(LoggerFactory);
+        optionsBuilder.LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Name });
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

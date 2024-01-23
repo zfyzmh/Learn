@@ -2,12 +2,10 @@
 using Sc = WebFirst.Entities.Sc;
 using Course = WebFirst.Entities.Course;
 using Teacher = WebFirst.Entities.Teacher;
-using static algorithm.sql100题.Test1_20;
 using SqlSugar;
-using algorithm.sql100题;
 using Microsoft.EntityFrameworkCore;
 
-namespace Sql100.sql100题
+namespace Sql100
 {
     public class Test11_20
     {

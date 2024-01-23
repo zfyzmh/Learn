@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace algorithm.sql100题
+namespace Sql100
 {
     public class Database
     {
@@ -12,7 +12,7 @@ namespace algorithm.sql100题
         /// </summary>
         public static readonly SqlSugarScope Instance = new SqlSugarScope(new ConnectionConfig()
         {
-            ConnectionString = "server=127.0.0.1;Port=3307;Database=learning;Uid=root;Pwd=210610zho.",//连接符字串
+            ConnectionString = "server=zifeiyu.fun;port=19960;database=test;uid=readonly;pwd=123456",//连接符字串
             DbType = DbType.MySql,//数据库类型
             IsAutoCloseConnection = true //不设成true要手动close
         },

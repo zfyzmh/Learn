@@ -16,7 +16,7 @@ using Sc = WebFirst.Entities.Sc;
 using Course = WebFirst.Entities.Course;
 using Teacher = WebFirst.Entities.Teacher;
 
-namespace algorithm.sql100题
+namespace Sql100
 {
     public class Test1_20
     {
