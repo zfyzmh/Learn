@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace algorithm
+namespace algorithm.经典算法
 {
     internal class 冒泡排序
     {
         [Test]
         public void Test1()
         {
-            int[] vs = new Int32[] { 24, 65, 2, 35, 87, 1, 6 };
+            int[] vs = new int[] { 24, 65, 2, 35, 87, 1, 6 };
             foreach (var item in BubblingSort(vs))
             {
                 Console.WriteLine(item);

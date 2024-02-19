@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace algorithm
+namespace algorithm.经典算法
 {
     internal class 贪心算法
     {
